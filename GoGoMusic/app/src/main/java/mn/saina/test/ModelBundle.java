@@ -1,4 +1,4 @@
-package mn.moco.music.gogo.Models;
+package mn.saina.test;
 
 public class ModelBundle {
     private ModelRadioCategory item1;

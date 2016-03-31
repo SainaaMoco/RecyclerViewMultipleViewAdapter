@@ -1,9 +1,11 @@
-package mn.moco.music.gogo.Adapters;
+package mn.saina.test;
 
 import android.content.Context;
 import android.graphics.Point;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,10 +17,6 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import mn.moco.music.gogo.Models.ModelBundle;
-import mn.moco.music.gogo.Models.ModelRadioCategory;
-import mn.moco.music.gogo.R;
-import mn.moco.music.gogo.Utils.Utils;
 
 public class MultipleViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
@@ -39,10 +37,17 @@ public class MultipleViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     private ModelBundle bundle;
     private boolean isNewBundleCreated = true;
 
-    public MultipleViewAdapter(Context context, Utils utils) {
+    public MultipleViewAdapter(Context context) {
         this.context = context;
-        point = utils.getDisplayPoints();
+        this.point = getDisplayPoints();
         bundle = new ModelBundle();
+    }
+
+    public Point getDisplayPoints() {
+        Display display = ((AppCompatActivity)context).getWindowManager().getDefaultDisplay();
+        Point point = new Point();
+        display.getSize(point);
+        return point;
     }
 
     public void setData(ModelRadioCategory item) {
@@ -101,7 +106,7 @@ public class MultipleViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                 item1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Log.e("Clicked", modelBundle.getItem1().getTitle());
+                        Log.e("Clicked -->", modelBundle.getItem1().getTitle());
                     }
                 });
             } else {
@@ -112,7 +117,7 @@ public class MultipleViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                 item2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Log.e("Clicked", modelBundle.getItem2().getTitle());
+                        Log.e("Clicked -->", modelBundle.getItem2().getTitle());
                     }
                 });
             } else {
@@ -123,7 +128,7 @@ public class MultipleViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                 item3.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Log.e("Clicked", modelBundle.getItem3().getTitle());
+                        Log.e("Clicked -->", modelBundle.getItem3().getTitle());
                     }
                 });
             } else {
@@ -224,7 +229,7 @@ public class MultipleViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                 item1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Log.e("Clicked", modelBundle.getItem1().getTitle());
+                        Log.e("Clicked -->", modelBundle.getItem1().getTitle());
                     }
                 });
             } else {
@@ -235,7 +240,7 @@ public class MultipleViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                 item2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Log.e("Clicked", modelBundle.getItem2().getTitle());
+                        Log.e("Clicked -->", modelBundle.getItem2().getTitle());
                     }
                 });
             } else {
@@ -246,7 +251,7 @@ public class MultipleViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                 item3.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Log.e("Clicked", modelBundle.getItem3().getTitle());
+                        Log.e("Clicked -->", modelBundle.getItem3().getTitle());
                     }
                 });
             } else {

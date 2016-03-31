@@ -1,4 +1,3 @@
 <resources>
-    <string name="app_name">GoGoMusic</string>
-    <string name="header">HEADER</string>
+    <string name="app_name">RecyclerViewMultipleViewAdapter</string>
 </resources>
